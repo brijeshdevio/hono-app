@@ -1,10 +1,10 @@
 {
   "name": "hono",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "npx wrangler dev src/index.ts",
-    "build": "tsx src/index.ts",
-    "deploy": "wrangler publish src/index.ts",
+    "dev": "npx wrangler dev api/index.ts",
+    "build": "tsx api/index.ts",
+    "deploy": "wrangler publish api/index.ts",
     "start": "node dist/index.js"
   },
   "dependencies": {

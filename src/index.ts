@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { welcomeStrings } from "./app";
+import { greet, welcomeStrings } from "./app";
 
 const app = new Hono();
 
@@ -11,8 +11,6 @@ app.get("/health", (c) => {
   return c.json({ status: "ok" });
 });
 
-app.get("/hello/:name", (c) => {
-  return c.text(`Hello ${c.req.param("name")}!`);
-});
+app.get("/hello/:name", greet);
 
 export default app;

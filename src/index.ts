@@ -1,7 +1,9 @@
 import { Hono } from "hono";
-import { welcomeStrings } from "./app";
+import { appRoutes, welcomeStrings } from "./app";
 
 const app = new Hono();
+
+app.route("/users", appRoutes);
 
 app.get("/", (c) => {
   return c.text(welcomeStrings.join("\n\n"));

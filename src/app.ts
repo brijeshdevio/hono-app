@@ -1,11 +1,7 @@
-import { Context } from "hono";
-import { BlankEnv, BlankInput } from "hono/types";
+import { Hono } from "hono";
 
-export const welcomeStrings = [
-  "Hello Hono!",
-  "To learn more about Hono on Vercel, visit https://vercel.com/docs/frameworks/backend/hono",
-];
+const app = new Hono();
 
-export const greet = (c: Context<BlankEnv, "/hello/:name", BlankInput>) => {
-  return c.text(`Hello ${c.req.param("name")}!`);
-};
+app.get("/", (c) => c.text("Hello Hono!"));
+
+export default app;

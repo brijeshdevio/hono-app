@@ -3,7 +3,7 @@ import { appRoutes, welcomeStrings } from "./app";
 
 const app = new Hono();
 
-app.route("/users", appRoutes);
+appRoutes(app);
 
 app.get("/", (c) => {
   return c.text(welcomeStrings.join("\n\n"));

@@ -1,9 +1,9 @@
 import { Hono } from "hono";
-import { greet } from "./controller";
+import { greet, routes } from "./controller";
 
 const app = new Hono();
 
 app.get("/", (c) => c.text("Hello Hono!"));
-app.get("/greet", greet);
+app.route("/api", routes);
 
 export default app;
